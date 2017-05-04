@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Routes
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
+
 //App listener - shows that the connection has been made on the right port
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
